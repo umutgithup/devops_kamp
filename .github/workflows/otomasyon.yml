@@ -1,0 +1,22 @@
+name: Ilk otomasyon robotum 
+
+  on:
+    push:
+      branches:
+        -main
+
+jobs:
+  test-et:
+    runs-on: ubuntu-latest 
+
+    steps:
+    -name: kodları githubtan çek.
+     uses: actions/checkout@v3
+    
+    -name: Python 3.9 Kur
+     uses: actions/setup-python@v4
+     with: 
+        python-version: '3.9'
+
+    -name: Kodu calistir ve test et
+     run: python merhaba.py
